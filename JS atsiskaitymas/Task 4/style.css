@@ -27,3 +27,30 @@
   margin-top: 50px;
   color: #333;
 }
+
+#output{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px;
+}
+
+.card{
+  width: 200px;
+  background-color: lightgray;
+  padding: 10px;
+}
+
+.brand{
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.listOfModels{
+  font-size: 14px;
+  text-indent: 20px;
+}
+
+.modelName{
+  text-decoration: none;
+}
