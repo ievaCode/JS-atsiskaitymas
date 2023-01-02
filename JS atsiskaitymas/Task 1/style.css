@@ -63,3 +63,12 @@ form {
     font-size: 2em;
   }
 }
+
+p{
+  border: 1px solid black;
+  max-width: 80%;
+  margin: 50px auto;
+  padding: 20px;
+  outline: 0;
+  font-size: 1.1em;
+}

@@ -8,3 +8,16 @@ pamatyti jo pateikto svorio konvertavimą į:
 Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
+
+document.querySelector("form")
+  .addEventListener ('submit' , (e) => {
+    e.preventDefault();
+    let inKg = document.querySelector("#search").value;
+    let inLb = inKg * 2.2046;
+    let inGr = inKg / 0.0010000;
+    let inOz = inKg * 35.274;
+    const paragraph = document.createElement("p");
+    const resultTextNode = document.createTextNode(`This is equal to: ${inLb}lb, ${inGr}gr, ${inOz}oz`);
+    paragraph.append(resultTextNode);
+    document.querySelector("#output").append(paragraph);
+  })
