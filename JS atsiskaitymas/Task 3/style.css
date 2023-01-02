@@ -58,4 +58,33 @@
   padding: 30px;
   border-radius: 5px;
   background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
+
+.card{
+  width: 200px;
+  text-align: center;
+}
+
+.imageWrap{
+ width: 130px;
+ height: 130px;
+ margin: auto;
+ border-radius: 50%;
+ border: 5px solid black;
+}
+
+.avatar{
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.login{
+  font-size: 18px;
+  font-weight: 700;
+}
+
+

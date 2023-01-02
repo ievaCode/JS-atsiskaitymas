@@ -11,3 +11,51 @@ Pastaba: Informacija apie user'į (jo kortelė) bei turi turėti bent minimalų 
 -------------------------------------------------------------------------- */
 
 const ENDPOINT = 'https://api.github.com/users';
+
+
+document.querySelector("#btn")
+  .addEventListener("click", (e) => {
+    document.querySelector("#message").remove();
+    fetch(`https://api.github.com/users`)
+    .then(res => res.json())
+    .then(data => {
+      data.forEach(user => {      
+        let newUser = new User(user.avatar_url, user.login);
+        document.querySelector("#output").append(newUser);
+      })
+    });
+  })
+
+  
+    class User{
+      constructor(url, login){
+        this.url = url;
+        this.login = login;
+        return this.render();
+      }
+      render = () => {
+        this.card = document.createElement('div');
+        this.card.classList.add('card');
+
+        this.imageWrap = document.createElement('div');
+        this.imageWrap.classList.add('imageWrap');
+        this.card.append(this.imageWrap);
+
+        this.avatar = document.createElement('img');
+        this.avatar.classList.add('avatar');
+        this.avatar.src = this.url;
+        this.avatar.alt = "user avatar";
+        this.imageWrap.append(this.avatar);
+
+        this.userLogin = document.createElement("p");
+        this.userLogin.classList.add('login');
+        this.loginTextNode = document.createTextNode(`User login: ${this.login}`);
+        this.userLogin.append(this.loginTextNode);
+        this.card.append(this.userLogin);
+      
+        return this.card;
+      }
+    }
+    
+
+
